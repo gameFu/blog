@@ -11,13 +11,13 @@ class ArticleComponent extends Component{
   render(){
     let articleStyle = {
       transform: "translate3d(0px, 0px, 0px); opacity: 1",
-      backgroundImage: "url('./src/assets/images/article_bg.jpg')"
+      backgroundImage: `url(${ArticleBgImg})`
     };
     let author_image = {
-      backgroundImage: "url('/src/assets/images/user_avatar.jpeg')"
+      // backgroundImage: `url(${UserAvatarImg})`
     }
     let buttomeImage = {
-        backgroundImage: "url('/src/assets/images/article-buttom.jpg')"
+        backgroundImage: `url(${ArticleButtomImg})`
     }
     return (
       <div>
