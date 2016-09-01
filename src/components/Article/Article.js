@@ -2,10 +2,11 @@ import React, { Component, PropTypes } from 'react'
 import ArticleBgImg from './assets/article_bg.jpg'
 // import UserAvatarImg from './assets/user_avatar.jpeg'
 import ArticleButtomImg from './assets/article-buttom.jpg'
-// import LogoReadiumComponent from './logoReadiumComponent'
-// import ArticleButtomComponent from './articleButtomComponent'
+import LogoReadiumComponent from '../LogoReadium'
+import ArticleButtomComponent from './articleButtomComponent'
+import classes from './article.scss'
+import fontClasses from 'font-awesome/scss/font-awesome.scss'
 
-require ("./article.scss");
 
 class ArticleComponent extends Component{
   render(){
@@ -21,29 +22,31 @@ class ArticleComponent extends Component{
     }
     return (
       <div>
-        <main className='content' role="main">
-          <article className='post'>
-           <div className='article-image' style= {articleStyle}>
+        <main className={classes['content']} role="main">
+        <LogoReadiumComponent/>
+          <article className={classes['post']}>
+           <div className={classes['article-image']} style= {articleStyle}>
            </div>
-           <div className='post-meta'>
-            <h1 className='post-title'>高并发订单池</h1>
-            <div className='post-text-meta'>
-              <div className='author-image' style={author_image}></div>
-              <h4 className="author-name" itemProp="author" itemScope itemType="http://schema.org/Person">gameFu</h4>
+           <div className={classes['post-meta']}>
+            <h1 className={classes['post-title']}>高并发订单池</h1>
+            <div className={classes['post-text-meta']}>
+              <div className={classes['author-image']} style={author_image}></div>
+              <h4 className={classes['author-name']} itemProp="author" itemScope itemType="http://schema.org/Person">gameFu</h4>
                on
                <time dateTime="2016-03-15 20:47">15 Mar 2016</time>
             </div>
-            <div className='down'>
-              <a href="#article-center" className="topofpage">
+            <div className={classes['down']}>
+              <a href="#article-center" className={classes['topofpage']}>
               <i className="fa fa-angle-down">
               </i>
               </a>
             </div>
            </div>
-           <section className='post-center' dangerouslySetInnerHTML={parseCenter(this.props.articleCenter)}>
+           <section className={classes['post-center']} dangerouslySetInnerHTML={parseCenter(this.props.articleCenter)}>
            </section>
           </article>
         </main>
+        <ArticleButtomComponent/>
       </div>
     );
   }
